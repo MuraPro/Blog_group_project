@@ -18,7 +18,7 @@ const dateConversion: DateConversionType = (date) => {
 
 const CardBlog = (properties: CardBlogPropertiesType) => {
   const { title, date, backgroundImage, author } = properties;
-  const { userName, avatarImage } = author;
+  const { avatarImage } = author;
 
   return (
     <Card

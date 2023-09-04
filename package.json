@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "@babel/plugin-transform-private-property-in-object": "^7.22.11",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/css-modules": "^1.0.2",
     "antd": "^5.8.6",

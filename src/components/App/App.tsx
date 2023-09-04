@@ -6,16 +6,13 @@ import ERoutes from '../../routes';
 
 import '../../assets/styles/global.scss';
 
-const App = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="blogs" replace />} />
-        <Route path={ERoutes.BLOGS} element={<BlogList />} />
-        <Route path={`${ERoutes.BLOGS}/:id`} element={<BlogPage />} />
-      </Route>
-    </Routes>
-  );
-};
-
+const App = () => (
+  <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Navigate to="blogs" replace />} />
+      <Route path={ERoutes.BLOGS} element={<BlogList />} />
+      <Route path={`${ERoutes.BLOGS}/:id`} element={<BlogPage />} />
+    </Route>
+  </Routes>
+);
 export default App;
