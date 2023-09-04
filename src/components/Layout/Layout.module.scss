@@ -1,0 +1,16 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ebeef3;
+  position: relative;
+}
+
+main {
+  max-width: 1440px;
+  min-height: 500px;
+  padding: 3px;
+  flex: 1 1 auto;
+  margin: 0 auto;
+  //   border: 1px solid red;
+}
