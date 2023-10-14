@@ -9,7 +9,9 @@ import { PrivateRoute } from './privateRoute/privateRoute';
 
 enum ERoutes {
   BLOGS = '/blogs',
-  ARTICLES = '/articles'
+  ARTICLES = '/articles',
+  SIGNIN = '/signin',
+  SIGNUP = '/signup'
 }
 
 const mainRoutes = {
@@ -17,8 +19,8 @@ const mainRoutes = {
   element: <Layout />,
   children: [
     { path: '/', index: true, element: <BlogList /> },
-    { path: '/signin', element: <FormAuthorization /> },
-    { path: '/signup', element: <RegistrationPage /> },
+    { path: ERoutes.SIGNIN, element: <FormAuthorization /> },
+    { path: ERoutes.SIGNUP, element: <RegistrationPage /> },
     {
       path: ERoutes.BLOGS,
       element: (
