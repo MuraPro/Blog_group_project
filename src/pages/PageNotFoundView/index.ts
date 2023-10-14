@@ -1,0 +1,1 @@
+export { PageNotFoundView } from './PageNotFoundView'

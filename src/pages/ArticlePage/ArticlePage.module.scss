@@ -1,0 +1,59 @@
+@import '../../assets/styles/variables.scss';
+
+.content {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background-color: $article-background-color;
+    min-height: 85vh;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.title {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $color-title;
+}
+
+.tags {
+    flex-grow: 1;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.link__text {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    padding-bottom: 3px;
+}
+
+.author {
+    font-size: 24px;
+    font-weight: 500;
+    color: $color-title;
+}
+
+.date {
+    color: $color-date;
+}
+
+.spin {
+    margin-top: 40px;
+}

@@ -1,0 +1,88 @@
+@import '../../assets/styles/variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  background: $background-articles-list;
+}
+
+.title {
+  height: 200px;
+  padding: 1rem 1rem 1rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: $background-blog-title;
+  border-bottom: 2px solid $color-select-title;
+  border-radius: 1rem;
+
+  &Name {
+    font-size: 3.5rem;
+  }
+}
+
+.sorting {
+  &Title {
+    padding: 0.3rem;
+    color: $color-select-title;
+  }
+  &Serch {
+    display: flex;
+    align-items: center;
+  }
+  &Select {
+    width: 160px;
+    margin-right: 20px;
+  }
+  &Panel {
+    display: flex;
+    justify-content: space-between;
+  }
+  &Link {
+    margin-left: 20px;
+  }
+  &Blog {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.list {
+  background: $background-articles-list;
+}
+
+.articles {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  padding: 2rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.loader,
+.error {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 20px;
+}
+
+.link__text {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  padding-bottom: 3px;
+}

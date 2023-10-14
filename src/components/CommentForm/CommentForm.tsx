@@ -1,47 +1,67 @@
-import React, { useState } from 'react';
-import { Button, Input, Form } from 'antd';
+import { FC, KeyboardEvent, useState } from 'react';
+import { Button, Input, Form, message } from 'antd';
+import { useAddCommentsMutation } from '../../redux/api/commentsApi';
+import { CommentFormType, CommentFormProperties } from './CommentForm.type';
+
 import style from './CommentForm.module.scss';
 
 const { TextArea } = Input;
 
-const CommentForm: React.FC = () => {
-  const [comment, setComment] = useState<string>('');
-  const isDisabled = comment.trim().length === 0;
+const CommentForm: FC<CommentFormProperties> = ({ articleId, userId }) => {
+  const [commentForm] = Form.useForm();
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [addComments] = useAddCommentsMutation();
+  const [messageApi, contextHolder] = message.useMessage();
 
-  const submitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-    setComment('');
-    console.log(comment);
+  const handleSubmit = (data: CommentFormType) => {
+    addComments({
+      comment: { ...data, userId },
+      articleId
+    })
+      .unwrap()
+      .then(() => {
+        commentForm.resetFields();
+        setIsFormVisible(false);
+      })
+      .catch(() => {
+        messageApi.open({
+          type: 'error',
+          content: 'Не удалось добавить комментарий'
+        });
+      });
   };
 
-  const pressKeyHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.code === 'Enter' && !isDisabled) {
-      submitHandler(event);
+  const pressKeyHandler = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      commentForm.submit();
     }
   };
 
-  const changeValueHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setComment(event.target.value);
-  };
-
   return (
-    <Form onFinish={submitHandler} className={`${style.commentForm} no-reset`}>
-      <Form.Item>
-        <TextArea
-          className={style.textArea}
-          rows={4}
-          placeholder="Write your comment here..."
-          value={comment}
-          onChange={changeValueHandler}
-          onKeyDown={pressKeyHandler}
-        />
-      </Form.Item>
-      <Form.Item className={style.customFormItem}>
-        <Button type="primary" htmlType="submit" disabled={isDisabled} onClick={submitHandler}>
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
+    <div>
+      {contextHolder}
+      <Button className={style.addBtn} type="primary" onClick={() => setIsFormVisible(true)}>
+        Добавить комментарии
+      </Button>
+      {isFormVisible && (
+        <Form onFinish={handleSubmit} className={`${style.commentForm} no-reset`} name="comment" form={commentForm}>
+          <Form.Item<CommentFormType> name="body" rules={[{ required: true, message: 'Please input your comment!' }]}>
+            <TextArea
+              className={style.textArea}
+              rows={4}
+              placeholder="Напишите ваш комментарий здесь..."
+              onKeyDown={pressKeyHandler}
+            />
+          </Form.Item>
+          <Form.Item<CommentFormType> className={style.customFormItem}>
+            <Button type="primary" htmlType="submit">
+              Отправить
+            </Button>
+          </Form.Item>
+        </Form>
+      )}
+    </div>
   );
 };
 

@@ -1,0 +1,65 @@
+@import "../../assets/styles/variables.scss";
+
+.content {
+    margin: 48px 0;
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    width: 300px;
+    height: 40px;
+}
+
+.blogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sorting {
+    width: 240px;
+
+    &__title {
+        padding: 0.3rem;
+        color: $color-select-title;
+    }
+
+    &__select {
+        height: 40px;
+        width: 100%;
+    }
+}
+
+.blogs__item {
+    margin-bottom: 48px;
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonCreateBlog {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+

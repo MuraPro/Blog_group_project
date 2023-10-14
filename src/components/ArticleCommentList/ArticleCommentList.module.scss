@@ -1,0 +1,24 @@
+@import '../../assets/styles/variables.scss';
+
+.commentList {
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  margin: 10px 0 0 10px;
+  overflow-wrap: break-word;
+  width: 30%;
+}
+
+.showComment {
+  font-size: 15px;
+  font-weight: bold;
+  color: $color-comment;
+}
+
+.load {
+  display: block;
+  width: 200px;
+}
+
+.deleteBtn {
+  margin: 0 10px 40px;
+}

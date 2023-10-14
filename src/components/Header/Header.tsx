@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Typography, Avatar, Space } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
@@ -7,7 +7,7 @@ import styles from './Header.module.scss';
 const { Header } = Layout;
 const { Title } = Typography;
 
-const PageHeader: React.FC = () => (
+const PageHeader: FC = () => (
   <Layout>
     <Header className={styles.header}>
       <div className={styles.container}>
@@ -23,12 +23,10 @@ const PageHeader: React.FC = () => (
               <Avatar size={64} icon={<UserOutlined />} />
             </Space>
           </Space>
-          <Link to="#" onClick={() => {}}>
-            Sign Out
-          </Link>
+          <Link to="#">Sign Out</Link>
         </div>
       </div>
     </Header>
   </Layout>
 );
-export default PageHeader;
+export { PageHeader };

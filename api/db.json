@@ -1,0 +1,41 @@
+{
+  "blogs": [
+    {
+      "title": "The first blog",
+      "backgroundImage": "",
+      "userId": "ii1pccG9cL",
+      "createdAt": 1694198712304,
+      "id": "wUMnJ9tVHA"
+    }
+  ],
+  "articles": [
+    {
+      "title": "The first blog article",
+      "body": "",
+      "tags": [],
+      "uploads": [],
+      "userId": "ii1pccG9cL",
+      "createdAt": 1694198786652,
+      "id": "hVdkPA4qlX",
+      "blogId": "wUMnJ9tVHA"
+    }
+  ],
+  "comments": [
+    {
+      "body": "This is the first comment in the article!",
+      "userId": "ii1pccG9cL",
+      "createdAt": 1694198870347,
+      "id": "AiGx4eJ339",
+      "articleId": "hVdkPA4qlX"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@yandex.ru",
+      "password": "$2a$10$150xmlbtSuk2htFuuaZpOuo1DrkG8BiY6egYLtVFixc3GtJN0OlHe",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "id": "ii1pccG9cL"
+    }
+  ]
+}

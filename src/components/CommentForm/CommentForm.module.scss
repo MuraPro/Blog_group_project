@@ -1,9 +1,17 @@
 .commentForm {
-    margin: 10px 0 0 10px;
-    width: 30%;
+  margin: 10px 0 0 10px;
+  width: 30%;
 }
 
 .customFormItem {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.textArea {
+  overflow-wrap: break-word;
+}
+
+.addBtn {
+  margin-left: 10px;
 }

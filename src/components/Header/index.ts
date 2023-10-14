@@ -1,2 +1,1 @@
-// eslint-disable-next-line import/prefer-default-export
-export { default as PageHeader } from './Header';
+export { PageHeader } from './Header';

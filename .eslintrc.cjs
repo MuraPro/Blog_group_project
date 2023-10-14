@@ -15,57 +15,58 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:import/recommended',
     'plugin:unicorn/recommended',
-    'prettier',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
+    'prettier'
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-      modules: true,
-    },
-    ecmaVersion: 2019,
-    sourceType: 'module',
-    project: 'tsconfig.json',
-  },
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: true,
     tsconfigRootDir: __dirname,
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   settings: {
     react: {
-      version: 'detect',
+      version: 'detect'
     },
     'import/resolver': {
       node: {
         paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-      typescript: {
-        alwaysTryTypes: true,
-      },
-    },
+        extensions: ['.ts', '.tsx']
+      }
+    }
   },
   plugins: ['react', 'jsx-a11y', 'import', 'react-refresh', 'unicorn', 'jsx-a11y'],
-  ignorePatterns: ['.eslintrc.cjs', 'node_modules/', 'build/', '.prettierrc'],
+  ignorePatterns: [
+    '.eslintrc.cjs',
+    'node_modules/',
+    'build/',
+    '.prettierrc',
+    'api/json-server.js',
+    'api/express-multer.js'
+  ],
   rules: {
+    'unicorn/prefer-spread': 'off',
+    'unicorn/prefer-ternary': ['warn', 'only-single-line'],
+    checkArrowFunctions: 'off',
+    'unicorn/no-null': ['off', { checkStrictEquality: true }],
     'react/jsx-filename-extension': [2, { extensions: ['.ts', '.tsx'] }],
     'unicorn/filename-case': [
       'error',
       {
         cases: {
           camelCase: true,
-          pascalCase: true,
-        },
-      },
+          pascalCase: true
+        }
+      }
     ],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
-  },
+    'import/prefer-default-export': 'off',
+    'unicorn/prefer-query-selector': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/require-await': 'off',
+    'no-param-reassign': ['error', { props: false }]
+  }
 };
